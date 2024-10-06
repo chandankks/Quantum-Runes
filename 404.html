@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Gilroy';
+            src: url('/Gilroy-Medium.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Gilroy';
+
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: gray
+        }
+
+        .main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .main h1 {
+            font-size: 8rem;
+            color: rgb(21, 5, 191);
+        }
+
+        .main span {
+            font-size: 4rem;
+            animation: colorChange 3s infinite;
+        }
+
+        @keyframes colorChange {
+            0% { color: #4379F2; }
+            20% { color: #6EC207; }
+            40% { color: #FFEB00; }
+            60% { color: #6EC207; }
+            80% { color: #117554; }
+            100% { color: #72BF78; }
+        }
+
+        @media screen and (max-width: 600px) {
+            .main {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .main h1 {
+                font-size: 4rem;
+                color: rgb(21, 5, 191);
+            }
+
+            .main span {
+                font-size: 2rem;
+                color: blueviolet;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>
+            OOPS! 
+        </h1>
+        <br>
+        <span>Comming Soon...</span>
+    </div>
+</body>
+
+</html>

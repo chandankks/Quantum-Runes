@@ -1,0 +1,658 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/Gilroy-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Waylimo';
+    src: url('/Waylimo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Marquisette';
+    src: url('/Marquisette.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Blinking';
+    src: url('/Blinking\ Free.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy';
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+.starry-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    width: 2px;
+    height: 2px;
+    opacity: 0.8;
+    animation: twinkle 5s infinite ease-in-out alternate, move 10s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100vh);
+        /* Moves from bottom to top */
+    }
+}
+
+#main {
+    height: 100%;
+    overflow: hidden;
+}
+
+#page1 {
+    will-change: transform;
+}
+
+
+#main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+#page1 {
+    width: 85%;
+    height: 100vh;
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 30px;
+}
+
+nav {
+    padding: 3vw 4vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    color: white;
+}
+
+.logo img {
+    width: 40px;
+}
+
+
+.image {
+    position: absolute;
+    width: 300px;
+    opacity: 0;
+    animation: fadeAnimation 10s infinite;
+  }
+  
+  .image:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .image:nth-child(2) {
+    animation-delay: 2s;
+  }
+  
+  .image:nth-child(3) {
+    animation-delay: 4s;
+  }
+  
+  .image:nth-child(4) {
+    animation-delay: 6s;
+  }
+  
+  .image:nth-child(5) {
+    animation-delay: 8s;
+  }
+  
+  @keyframes fadeAnimation {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    40% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.menu a {
+    font-size: 2vw;
+    color: white;
+}
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.intro-bg {
+    width: 50%;
+    height: 80vh;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.intro-bg-up {
+    width: 100%;
+    height: 35%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-bg-up h1 {
+    font-family: 'Marquisette';
+    color: orange;
+    font-size: 8rem;
+    letter-spacing: 10px;
+    padding: 0;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.7),
+        0 0 20px rgba(255, 165, 0, 0.5),
+        0 0 30px rgba(255, 165, 0, 0.3);
+
+}
+
+.intro-bg-up span {
+    color: white;
+    font-size: 2.5rem;
+    font-family: 'Blinking';
+    letter-spacing: 8px;
+}
+
+.intro-bg-down {
+    width: 100%;
+    height: 65%;
+    /* border: 1px solid blue; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+@keyframes scaleAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        /* Scale ko normal position par rakha */
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.1);
+        /* Scale ko 1.1 tak badhaya */
+    }
+}
+
+@keyframes scaleUpDown {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+        /* Image ko 1.2x zoom karein */
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rotate-vertical {
+    from {
+        transform: rotateY(0deg);
+        /* Start at 0 degrees */
+    }
+
+    to {
+        transform: rotateY(360deg);
+        /* End at 360 degrees */
+    }
+}
+
+
+.head-line {
+    width: 100%;
+    height: 90vh;
+    /* border: 1px solid white; */
+    display: flex;
+    color: white;
+}
+
+.head-left {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+.head-right {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    gap: 40px;
+}
+
+
+.head-left h2 {
+    font-size: 60px;
+}
+
+.head-left p {
+    font-size: 30px;
+    margin-top: 15px;
+    color: orange;
+    text-shadow:
+        0 0 1px orange,
+        0 0 5px orange,
+        0 0 15px orange,
+        0 0 20px orange,
+        0 0 30px orange,
+        0 0 40px orange;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow:
+            0 0 1px orange,
+            0 0 5px orange,
+            0 0 15px orange,
+            0 0 20px orange,
+            0 0 30px orange,
+            0 0 40px orange;
+    }
+
+    100% {
+        text-shadow:
+            0 0 5px orange,
+            0 0 10px orange,
+            0 0 20px orange,
+            0 0 30px orange,
+            0 0 40px orange,
+            0 0 50px orange;
+    }
+}
+
+.glow-line {
+    width: 500px;
+    /* Line width */
+    height: 2px;
+    /* Line height */
+    background: linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 50%);
+    /* Half white, half transparent */
+    position: relative;
+}
+
+/* Glow effect on half the line */
+.glow-line::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    /* Half of 200px line */
+    height: 2px;
+    background-color: white;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.8);
+    /* Glow effect */
+}
+
+.head-right p {
+    font-size: 20px;
+}
+
+.utl-section {
+    color: white;
+}
+
+.utl-section h1 {
+    margin-top: 100px;
+    text-transform: uppercase;
+
+}
+
+.utl-con {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.utl-box {
+    width: 50vw;
+    height: 30vh;
+    border-radius: 10px;
+    background-color: #0E0E0E;
+    padding: 40px;
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+}
+
+.utl-box h3 {
+    font-size: 25px;
+}
+
+.utl-box p {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+#page1 .line-t {
+    margin-top: 50px;
+}
+
+.footer {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.foot-link{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;  
+
+}
+
+
+.footer-left {
+    width: 50%;
+    max-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 30px;
+}
+
+
+
+.footer-left p {
+    font-size: 15px;
+}
+
+.footer-med {
+    width: 25%;
+    max-height: 40vh;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-med a {
+    text-decoration: none;
+    color: white;
+    text-align: left;
+}
+
+.footer-right {
+    width: 25%;
+    max-height: 40vh;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+.footer-right a {
+    text-decoration: none;
+    color: white;
+    text-align: left;
+}
+
+.foot-end {
+    margin-top: 50px;
+    width: 100%;
+    height: 10vh;
+    color: white;
+    display: flex;
+}
+
+.foot-left {
+    width: 50%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.foot-right {
+    width: 50%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+}
+
+.foot-right a {
+    color: white;
+    font-size: 35px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    #main {
+        width: 100%;
+        
+    }
+
+    #page1 {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .logo img {
+        width: 25px;
+    }
+
+    .logo h1 {
+        font-size: 15px;
+    }
+
+    .menu a {
+        font-size: 20px;
+    }
+
+
+    .container {
+        width: 100%;
+    }
+
+    .intro-bg {
+        width: 80%;
+    }
+
+    .intro-bg-up h1 {
+        font-size: 5rem;
+    }
+
+    .head-line {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .head-left {
+        width: 100%;
+    }
+
+    .head-left h2 {
+        font-size: 30px;
+    }
+
+    .head-left p {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .head-right {
+        /* margin-top: 20px; */
+        width: 100%;
+        padding: 0;
+    }
+
+    .utl-con {
+        width: 100%;
+    }
+
+    .utl-box {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .footer {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-left {
+        width: 100%;
+        height: fit-content;
+        padding: 0;
+
+    }
+
+
+    .foot-link{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .footer-med {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+    }
+
+    .footer-right {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+    }
+
+    .line-b {
+        margin-top: 40px;
+    }
+
+    .foot-end {
+        width: 100%;
+    }
+
+    .footer-left img{
+        width: 400px;
+    }
+    
+    .footer-left p{
+        padding: 30px;
+    }
+    
+
+    .foot-left span {
+        font-size: 12px;
+    }
+
+    .foot-right a {
+        font-size: 20px;
+    }
+
+
+}
+
+
+
